@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/lib.php');
 
-$THEME->name = 'boost';
+$THEME->name = 'boost_preview';
 $THEME->sheets = [];
 $THEME->editor_sheets = [];
 $THEME->editor_scss = ['editor'];
