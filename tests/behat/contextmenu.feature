@@ -1,6 +1,6 @@
 @javascript @theme_boost_preview
 Feature: Context settings menu
-  To navigate in boost_preview theme I need to use the context settings menu
+  To navigate in boost theme I need to use the context settings menu
 
   Background:
     Given the following "courses" exist:

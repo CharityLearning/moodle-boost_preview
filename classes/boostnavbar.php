@@ -23,13 +23,13 @@ use action_link;
 use lang_string;
 
 /**
- * Creates a navbar for boost_preview that allows easy control of the navbar items.
+ * Creates a navbar for boost that allows easy control of the navbar items.
  *
  * @package    theme_boost_preview
  * @copyright  2021 Adrian Greeve <adrian@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class boost_previewnavbar implements \renderable {
+class boostnavbar implements \renderable {
 
     /** @var array The individual items of the navbar. */
     protected $items = [];
@@ -46,13 +46,13 @@ class boost_previewnavbar implements \renderable {
         foreach ($this->page->navbar->get_items() as $item) {
             $this->items[] = $item;
         }
-        $this->prepare_nodes_for_boost_preview();
+        $this->prepare_nodes_for_boost();
     }
 
     /**
-     * Prepares the navigation nodes for use with boost_preview.
+     * Prepares the navigation nodes for use with boost.
      */
-    protected function prepare_nodes_for_boost_preview(): void {
+    protected function prepare_nodes_for_boost(): void {
         global $PAGE;
 
         // Remove the navbar nodes that already exist in the primary navigation menu.
@@ -127,9 +127,9 @@ class boost_previewnavbar implements \renderable {
         // Set the designated one path for courses.
         $mycoursesnode = $this->get_item('mycourses');
         if (!is_null($mycoursesnode)) {
-            $url = new \moodle_url('/my/courses.php?debug=true');
+            $url = new \moodle_url('/my/courses.php');
             $mycoursesnode->action = $url;
-            $mycoursesnode->text = "BATTON";
+            $mycoursesnode->text = get_string('mycourses');
         }
 
         $this->remove_no_link_items($removesections);
@@ -145,16 +145,16 @@ class boost_previewnavbar implements \renderable {
     }
 
     /**
-     * Get all the boost_previewnavbaritem elements.
+     * Get all the boostnavbaritem elements.
      *
-     * @return boost_previewnavbaritem[] boost_preview navbar items.
+     * @return boostnavbaritem[] Boost navbar items.
      */
     public function get_items(): array {
         return $this->items;
     }
 
     /**
-     * Removes all navigation items out of this boost_preview navbar
+     * Removes all navigation items out of this boost navbar
      */
     protected function clear_items(): void {
         $this->items = [];
@@ -185,10 +185,10 @@ class boost_previewnavbar implements \renderable {
     }
 
     /**
-     * Remove a boost_previewnavbaritem from the boost_preview navbar.
+     * Remove a boostnavbaritem from the boost navbar.
      *
-     * @param  string|int $itemkey An identifier for the boost_previewnavbaritem
-     * @param  int|null $itemtype An additional type identifier for the boost_previewnavbaritem (optional)
+     * @param  string|int $itemkey An identifier for the boostnavbaritem
+     * @param  int|null $itemtype An additional type identifier for the boostnavbaritem (optional)
      */
     protected function remove($itemkey, ?int $itemtype = null): void {
 
@@ -223,7 +223,7 @@ class boost_previewnavbar implements \renderable {
     }
 
     /**
-     * Removes the action from the last item of the boost_previewnavbaritem.
+     * Removes the action from the last item of the boostnavbaritem.
      */
     protected function remove_last_item_action(): void {
         $item = end($this->items);

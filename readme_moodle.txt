@@ -7,7 +7,7 @@ Sass:
 This theme uses Bootstrap version 4.6.0
 The Bootstrap repository is available on:
 
-https://github.com/twitter/bootstrap.git
+https://github.com/twbs/bootstrap
 
 To update to the latest release of twitter bootstrap:
 
@@ -32,5 +32,5 @@ Javascript:
 includes the 'core/popper' library instead of 'popper.js'. For version 4.6.0 these files were: tooltip.js and dropdown.js
 * update ./thirdpartylibs.xml to include all new Bootstrap js files
 * run "grunt ignorefiles" to prevent linting errors appearing from the new Bootstrap js files.
-* in folder theme/boost_preview run "grunt amd" to compile the bootstrap JS
-* in folder theme/boost_preview run "grunt css" to compile scss
+* in folder theme/boost run "grunt amd" to compile the bootstrap JS
+* in folder theme/boost run "grunt css" to compile scss

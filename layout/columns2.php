@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A two column layout for the boost_preview theme.
+ * A two column layout for the boost theme.
  *
  * @package   theme_boost_preview
  * @copyright 2016 Damyon Wiese
@@ -24,7 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
 
 // Add block button in editing mode.

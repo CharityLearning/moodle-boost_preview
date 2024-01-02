@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * An embedded layout for the boost_preview theme.
+ * An embedded layout for the boost theme.
  *
  * @package   theme_boost_preview
  * @copyright 2016 Damyon Wiese

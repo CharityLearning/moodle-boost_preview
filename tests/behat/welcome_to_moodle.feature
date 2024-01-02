@@ -1,5 +1,5 @@
 @javascript @theme_boost_preview
-Feature: Welcome message on boost_preview
+Feature: Welcome message on boost
   To be welcome in moodle
   As a User
   I need to see a welcome message on the first page

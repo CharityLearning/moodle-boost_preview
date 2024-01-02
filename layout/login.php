@@ -17,7 +17,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * A login page layout for the boost_preview theme.
+ * A login page layout for the boost theme.
  *
  * @package   theme_boost_preview
  * @copyright 2016 Damyon Wiese

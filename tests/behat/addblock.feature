@@ -1,5 +1,5 @@
 @javascript @theme_boost_preview
-Feature: Add a block using boost_preview theme
+Feature: Add a block using boost theme
   In order to decide the blocks to display in the Add a block list for a theme
   As an administrator
   I need to define them using the unaddableblocks setting

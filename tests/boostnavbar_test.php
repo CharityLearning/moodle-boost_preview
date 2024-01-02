@@ -17,14 +17,14 @@
 namespace theme_boost_preview;
 
 /**
- * Test the boost_previewnavbar file
+ * Test the boostnavbar file
  *
  * @package    theme_boost_preview
- * @covers     \theme_boost_preview\boost_previewnavbar
+ * @covers     \theme_boost_preview\boostnavbar
  * @copyright  2021 Peter Dias
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class boost_previewnavbar_test extends \advanced_testcase {
+class boostnavbar_test extends \advanced_testcase {
     /**
      * Provider for test_remove_no_link_items
      * The setup and expected arrays are defined as an array of 'nodekey' => $hasaction
@@ -202,23 +202,23 @@ class boost_previewnavbar_test extends \advanced_testcase {
                 $value['issection'] ? \navigation_node::TYPE_SECTION : null);
         }
 
-        $boost_previewnavbar = $this->getMockBuilder(boost_previewnavbar::class)
+        $boostnavbar = $this->getMockBuilder(boostnavbar::class)
             ->disableOriginalConstructor()
             ->onlyMethods([])
             ->getMock();
 
-        $rc = new \ReflectionClass(boost_previewnavbar::class);
+        $rc = new \ReflectionClass(boostnavbar::class);
         $rcp = $rc->getProperty('items');
         $rcp->setAccessible(true);
-        $rcp->setValue($boost_previewnavbar, $page->navbar->get_items());
+        $rcp->setValue($boostnavbar, $page->navbar->get_items());
 
         // Make the call to the function.
         $rcm = $rc->getMethod('remove_no_link_items');
         $rcm->setAccessible(true);
-        $rcm->invoke($boost_previewnavbar, $removesectionnodes);
+        $rcm->invoke($boostnavbar, $removesectionnodes);
 
         // Get the value for the class variable that the function modifies.
-        $values = $rcp->getValue($boost_previewnavbar);
+        $values = $rcp->getValue($boostnavbar);
         $actual = [];
         foreach ($values as $value) {
             $actual[$value->text] = $value->has_action();
@@ -381,23 +381,23 @@ class boost_previewnavbar_test extends \advanced_testcase {
             $page->navbar->add($node['text'], $node['action'], \navigation_node::TYPE_CUSTOM);
         }
 
-        $boost_previewnavbar = $this->getMockBuilder(boost_previewnavbar::class)
+        $boostnavbar = $this->getMockBuilder(boostnavbar::class)
             ->disableOriginalConstructor()
             ->onlyMethods([])
             ->getMock();
 
-        $rc = new \ReflectionClass(boost_previewnavbar::class);
+        $rc = new \ReflectionClass(boostnavbar::class);
         $rcp = $rc->getProperty('items');
         $rcp->setAccessible(true);
-        $rcp->setValue($boost_previewnavbar, $page->navbar->get_items());
+        $rcp->setValue($boostnavbar, $page->navbar->get_items());
 
         // Make the call to the function.
         $rcm = $rc->getMethod('remove_duplicate_items');
         $rcm->setAccessible(true);
-        $rcm->invoke($boost_previewnavbar);
+        $rcm->invoke($boostnavbar);
 
         // Get the value for the class variable that the function modifies.
-        $values = $rcp->getValue($boost_previewnavbar);
+        $values = $rcp->getValue($boostnavbar);
         $actual = [];
         foreach ($values as $value) {
             $actual[] = $value->text;
@@ -520,23 +520,23 @@ class boost_previewnavbar_test extends \advanced_testcase {
             $page->navbar->add($text, $action, \navigation_node::TYPE_CUSTOM);
         }
 
-        $boost_previewnavbar = $this->getMockBuilder(boost_previewnavbar::class)
+        $boostnavbar = $this->getMockBuilder(boostnavbar::class)
             ->disableOriginalConstructor()
             ->onlyMethods([])
             ->getMock();
 
-        $rc = new \ReflectionClass(boost_previewnavbar::class);
+        $rc = new \ReflectionClass(boostnavbar::class);
         $rcp = $rc->getProperty('items');
         $rcp->setAccessible(true);
-        $rcp->setValue($boost_previewnavbar, $page->navbar->get_items());
+        $rcp->setValue($boostnavbar, $page->navbar->get_items());
 
         // Make the call to the function.
         $rcm = $rc->getMethod('remove_items_that_exist_in_navigation');
         $rcm->setAccessible(true);
-        $rcm->invoke($boost_previewnavbar, $navigationmenu);
+        $rcm->invoke($boostnavbar, $navigationmenu);
 
         // Get the value for the class variable that the function modifies.
-        $values = $rcp->getValue($boost_previewnavbar);
+        $values = $rcp->getValue($boostnavbar);
         $actual = [];
         foreach ($values as $value) {
             $actual[] = $value->text;

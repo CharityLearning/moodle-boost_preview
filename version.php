@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * boost_preview.
+ * Boost.
  *
  * @package    theme_boost_preview
  * @copyright  2016 Frédéric Massart
@@ -24,6 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2022041900;
-$plugin->requires  = 2022041200;
+$plugin->version   = 2022112800;
+$plugin->requires  = 2022111800;
 $plugin->component = 'theme_boost_preview';

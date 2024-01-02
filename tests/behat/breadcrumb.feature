@@ -1,6 +1,6 @@
 @javascript @theme_boost_preview
 Feature: Breadcrumbs navigation
-  To navigate in boost_preview theme
+  To navigate in boost theme
   As an admin user
   I should see breadcrumbs
 

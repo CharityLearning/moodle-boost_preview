@@ -23,7 +23,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
-    $settings = new theme_boost_preview_admin_settingspage_tabs('themesettingboost_preview', get_string('configtitle', 'theme_boost_preview'));
+    $settings = new theme_boost_preview_admin_settingspage_tabs('themesettingboost', get_string('configtitle', 'theme_boost_preview'));
     $page = new admin_settingpage('theme_boost_preview_general', get_string('generalsettings', 'theme_boost_preview'));
 
     // Unaddable blocks.
@@ -52,7 +52,7 @@ if ($ADMIN->fulltree) {
     $choices['default.scss'] = 'default.scss';
     $choices['plain.scss'] = 'plain.scss';
 
-    $setting = new admin_setting_configthemepreset($name, $title, $description, $default, $choices, 'boost_preview');
+    $setting = new admin_setting_configthemepreset($name, $title, $description, $default, $choices, 'boost');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

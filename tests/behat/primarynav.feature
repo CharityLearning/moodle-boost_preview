@@ -1,6 +1,6 @@
 @javascript @theme_boost_preview
 Feature: Primary navigation
-  To navigate in boost_preview theme
+  To navigate in boost theme
   As a user
   I need to use the primary navigation
 
