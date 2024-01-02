@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die;
  */
 class core_renderer extends \core_renderer {
 
-    public function edit_button(moodle_url $url) {
+    public function edit_button(moodle_url $url, $method = 'post') {
         if ($this->page->theme->haseditswitch) {
             return;
         }
